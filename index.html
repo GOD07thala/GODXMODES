@@ -1,18 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>⚡ GOD X MODES ⚡</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: #fff;
+      padding: 30px;
+    }
+    .prediction-box {
+      background: #222;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #00e6b8;
+    }
+  </style>
 </head>
 <body>
-  <h1>⚡ GOD X MODES  🔮</h1>
-  <div>
-    <p>Period: <span id="period">1001</span></p>
-    <p>Prediction Result: <span id="result">None</span></p>
-    <button id="predictBtn" onclick="startPrediction()">Predict</button>
-    <p id="timer"></p>
+
+  <h1>⚡ GOD X MODES ⚡</h1>
+
+  <div class="prediction-box">
+    <h2>Next Prediction</h2>
+    <p id="prediction">Click to Predict</p>
+    <button class="btn" onclick="generatePrediction()">Predict Now</button>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function generatePrediction() {
+      const colors = ['Red', 'Green', 'Violet'];
+      const numbers = ['0', '5', '9', '2', '7'];
+      const prediction = `${colors[Math.floor(Math.random() * colors.length)]} - ${numbers[Math.floor(Math.random() * numbers.length)]}`;
+      document.getElementById('prediction').textContent = prediction;
+    }
+  </script>
+
 </body>
 </html>
